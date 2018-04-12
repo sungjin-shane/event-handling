@@ -9,6 +9,12 @@ function start () {
   one()    
   // Your turn! Create a new function called `two`, then call it from here.
   two()
+
+  three()
+
+  four()
+
+  console.log("document loaded")
 }
 
 function one () {
@@ -35,6 +41,20 @@ function two () {
 }
 
 // CREATE FUNCTION three HERE
+function three () {
+  var three = document.getElementById('three')
+  three.addEventListener('mouseenter', makeOrange)
+  three.addEventListener('mouseleave', makeWhite)
+  console.log("function three was called")
+}
+
+// CREATE FUNCTION four HERE
+function four () {
+  var four = document.getElementById('four')
+  four.addEventListener('click', makeBlack)
+  four.addEventListener('mouseleave', makeWhite)
+  console.log("function four was called")
+}
 
 // CREATE FUNCTION four HERE
 
@@ -47,6 +67,16 @@ function makeGreen (evt) {
   evt.target.style.backgroundColor = 'green'
 }
 
+function makeOrange (evt) {
+  evt.target.style.backgroundColor = 'orange'
+  console.log("function makeOrange was called")
+  console.log(evt.target)
+}
+
+function makeBlack (evt) {
+  evt.target.style.backgroundColor = 'black'
+  console.log("function makeBlack was called")
+}
 
 function makeWhite (evt) {
   evt.target.style.backgroundColor = 'white'
